@@ -54,8 +54,31 @@ def top10hashtag():
     for hashtag in range(10):
         print(hashtag, hashtags[hashtag])
 
+def main():
+    salir = "0"
+    while(salir != "5"):
+        print("------------- MENU -------------")
+        texto = "¿Qué quieres consultar?\n"
+        texto += "1. Los top 10 tweets más retweeted.\n"
+        texto += "2. Los top 10 usuarios en función de la cantidad de tweets que emitieron.\n"
+        texto += "3. Los top 10 días donde hay más tweets.\n"
+        texto += "4. Los top 10 hashtags más usados.\n"
+        texto += "5. Salir\n"
+        texto += "Tu opcion: "
+        respuesta = input(texto)
+        if(respuesta == "1"):
+            top10MasRetweeted()
+        elif(respuesta == "2"):
+            top10Usuarios()
+        elif(respuesta == "3"):
+            top10Dias()
+        elif(respuesta == "4"):
+            top10hashtag()
+        elif(respuesta == "5"):
+            salir = "5"
+        else:
+            print("Opción no válida")
+
+
 if __name__ == "__main__":
-    top10MasRetweeted()
-    top10Usuarios()
-    top10Dias()
-    top10hashtag()
+    main()
